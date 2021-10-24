@@ -30,7 +30,8 @@ let mobilenet;
 const mobilenetDemo = async () => {
   status('Loading model...');
 
-  mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH, {fromTFHub: true});
+  //mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH, {fromTFHub: true});
+  mobilenet = await tf.loadGraphModel("D:\GitHub\image-classification-website\Graphmodel\model.json");
 
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
