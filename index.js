@@ -21,7 +21,7 @@ import {IMAGENET_CLASSES} from './imagenet_classes';
 
 //const MOBILENET_MODEL_PATH = 'https://tfhub.dev/google/tfjs-model/imagenet/mobilenet_v2_100_224/classification/3/default/1';
     // tslint:disable-next-line:max-line-length
-const MOBILENET_MODEL_PATH = "D:\GitHub\image-classification-website\Graphmodel\model.json"
+const MOBILENET_MODEL_PATH = "./Graphmodel/model.json"
 
 const IMAGE_SIZE = 224;
 const TOPK_PREDICTIONS = 10;
@@ -32,6 +32,7 @@ const mobilenetDemo = async () => {
 
   mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH)//, {fromTFHub: true});
 
+  console.log(mobilenet);
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
   // value of `predict`.
