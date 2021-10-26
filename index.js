@@ -24,7 +24,7 @@ import {IMAGENET_CLASSES} from './imagenet_classes';
 const MOBILENET_MODEL_PATH = "./Graphmodel/model.json"
 
 const IMAGE_SIZE = 224;
-const TOPK_PREDICTIONS = 10;
+const TOPK_PREDICTIONS = 2;
 
 let mobilenet;
 const mobilenetDemo = async () => {
