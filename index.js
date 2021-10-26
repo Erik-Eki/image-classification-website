@@ -17,11 +17,13 @@
 
 import * as tf from '@tensorflow/tfjs';
 
-import {IMAGENET_CLASSES} from './imagenet_classes';
 
+import {IMAGENET_CLASSES} from './imagenet_classes';
 //const MOBILENET_MODEL_PATH = 'https://tfhub.dev/google/tfjs-model/imagenet/mobilenet_v2_100_224/classification/3/default/1';
     // tslint:disable-next-line:max-line-length
-const MOBILENET_MODEL_PATH = "./Graphmodel/model.json"
+//const MOBILENET_MODEL_PATH = "./Graphmodel/model.json"
+
+const MOBILENET_MODEL_PATH = "http://172.30.96.1:8080/Graphmodel/model.json";
 
 const IMAGE_SIZE = 224;
 const TOPK_PREDICTIONS = 2;
@@ -30,7 +32,8 @@ let mobilenet;
 const mobilenetDemo = async () => {
   status('Loading model...');
 
-  mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH)//, {fromTFHub: true});
+  mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH);//, {fromTFHub: true});
+
 
   console.log(mobilenet);
   // Warmup the model. This isn't necessary, but makes the first prediction
